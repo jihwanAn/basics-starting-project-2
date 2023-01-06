@@ -1,5 +1,6 @@
 const monsterHealthBar = document.getElementById("monster-health");
 const playerHealthBar = document.getElementById("player-health");
+const bonusLifeEl = document.getElementById("bonus-life");
 
 const attackBtn = document.getElementById("attack-btn");
 const strongAttackBtn = document.getElementById("strong-attack-btn");
@@ -27,4 +28,17 @@ function dealPlayerDamage(damage) {
 
 function increasePlayerHealth(healValue) {
   playerHealthBar.value = +playerHealthBar.value + healValue;
+}
+
+function removeBonusLife() {
+  bonusLifeEl.parentNode.removeChild(bonusLifeEl);
+}
+
+function setPlayerHealth(health) {
+  playerHealthBar.value = health;
+}
+
+function resetGame(value) {
+  playerHealthBar.value = value;
+  monsterHealthBar.value = value;
 }
